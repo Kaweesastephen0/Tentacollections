@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenta Collectionz - Mobile Store</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#4F46E5', secondary: '#F59E0B' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAFAFA;
+        }
+
+        .hide-scroll-bar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scroll-bar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .logo img {
+            width: 40px;
+            height: 50px;
+            bottom: -10px;
+        }
+        nav{
+            color: #3498DB;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800">
+    <!-- Nav Bar -->
+    <nav class="fixed top-0 w-full bg-white shadow-sm z-50">
+        <div class="px-4 py-3 flex items-center justify-between">
+            <div class="flex items-end">
+                <!-- <a href="#" class="font-['Pacifico'] text-xl text-primary">logo</a> -->
+                 <a href="index.html" class="logo ml-1"><img src="img/logo.png"  alt="logo"></a>
+                <span class="ml-0 text-sm" style="margin-left:-10px; font-size: larger;"><b>enta </b>Collectionz</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <button class="w-8 h-8 flex items-center justify-center text-gray-600">
+                    <i class="ri-search-line ri-lg"></i>
+                </button>
+                <button class="w-8 h-8 flex items-center justify-center text-gray-600 relative">
+                    <i class="ri-shopping-cart-line ri-lg"></i>
+                    <span
+                        class="absolute -top-1 -right-1 bg-primary text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">3</span>
+                </button>
+                <button class="w-8 h-8 flex items-center justify-center text-gray-600" id="menuButton">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <div class="pt-16 pb-16">
+        <!-- Hero Banner -->
+        <div class="relative w-full h-48 overflow-hidden mb-6">
+            <img src="https://public.readdy.ai/ai/img_res/97390d3d071f9f5e559e981e90bf719b.jpg" alt="Featured Products"
+                class="w-full h-full object-cover object-top">
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-primary/70 to-transparent flex flex-col justify-center px-6">
+                <h1 class="text-white text-2xl font-bold mb-2">Summer Sale</h1>
+                <p class="text-white text-sm mb-4">Up to 40% off on premium devices</p>
+                <button
+                    class="bg-white text-primary px-4 py-2 rounded-button font-medium text-sm w-max cursor-pointer">Shop
+                    Now</button>
+            </div>
+        </div>
+        <!-- Categories -->
+        <div class="px-4 mb-8">
+            <h2 class="text-lg font-semibold mb-4">Categories</h2>
+            <div class="grid grid-cols-4 gap-3">
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-blue-50 overflow-hidden mb-2">
+                        <img src="https://public.readdy.ai/ai/img_res/35e15730242def77a528e22c83176b0d.jpg"
+                            alt="Smartphones" class="w-full h-full object-cover">
+                    </div>
+                    <span
+                        class="text-xs text-center whitespace-nowrap overflow-hidden text-overflow-ellipsis">Smartphones</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-green-50 overflow-hidden mb-2">
+                        <img src="https://public.readdy.ai/ai/img_res/b2c9c98ff2e9bc55f00fdb7cced887b2.jpg"
+                            alt="Tablets" class="w-full h-full object-cover">
+                    </div>
+                    <span
+                        class="text-xs text-center whitespace-nowrap overflow-hidden text-overflow-ellipsis">Tablets</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-yellow-50 overflow-hidden mb-2">
+                        <img src="https://public.readdy.ai/ai/img_res/0161caec17e6b39c122c44468393fb6e.jpg"
+                            alt="Accessories" class="w-full h-full object-cover">
+                    </div>
+                    <span
+                        class="text-xs text-center whitespace-nowrap overflow-hidden text-overflow-ellipsis">Accessories</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-purple-50 overflow-hidden mb-2">
+                        <img src="https://public.readdy.ai/ai/img_res/0bb529f429420116fe0e7c28577cfbd5.jpg"
+                            alt="Wearables" class="w-full h-full object-cover">
+                    </div>
+                    <span
+                        class="text-xs text-center whitespace-nowrap overflow-hidden text-overflow-ellipsis">Wearables</span>
+                </div>
+            </div>
+        </div>
+        <!-- Featured Brands -->
+        <div class="px-4 mb-8">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-semibold">Featured Brands</h2>
+                <a href="#" class="text-primary text-sm">View all</a>
+            </div>
+            <div class="flex space-x-4 overflow-x-auto hide-scroll-bar pb-2">
+                <div class="flex-shrink-0 w-24 h-12 bg-white rounded shadow-sm flex items-center justify-center">
+                    <span class="font-medium text-gray-800">Apple</span>
+                </div>
+                <div class="flex-shrink-0 w-24 h-12 bg-white rounded shadow-sm flex items-center justify-center">
+                    <span class="font-medium text-gray-800">Samsung</span>
+                </div>
+                <div class="flex-shrink-0 w-24 h-12 bg-white rounded shadow-sm flex items-center justify-center">
+                    <span class="font-medium text-gray-800">Google</span>
+                </div>
+                <div class="flex-shrink-0 w-24 h-12 bg-white rounded shadow-sm flex items-center justify-center">
+                    <span class="font-medium text-gray-800">OnePlus</span>
+                </div>
+                <div class="flex-shrink-0 w-24 h-12 bg-white rounded shadow-sm flex items-center justify-center">
+                    <span class="font-medium text-gray-800">Xiaomi</span>
+                </div>
+            </div>
+        </div>
+        <!-- New Arrivals -->
+        <div class="px-4 mb-8">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-semibold">New Arrivals</h2>
+                <a href="#" class="text-primary text-sm">View all</a>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white rounded shadow-sm overflow-hidden">
+                    <div class="h-36 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/eb8b7921884380d28e679540c1c78e6d.jpg"
+                            alt="iPhone 15 Pro" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-3">
+                        <div class="flex items-center mb-1">
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded">New</span>
+                        </div>
+                        <h3 class="text-sm font-medium mb-1">iPhone 15 Pro</h3>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-semibold text-primary">UGX999</span>
+                            <button
+                                class="w-7 h-7 flex items-center justify-center bg-primary text-white rounded-full cursor-pointer">
+                                <i class="ri-add-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded shadow-sm overflow-hidden">
+                    <div class="h-36 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/3fb1101442ca40deb744075398b61e42.jpg"
+                            alt="Galaxy S24 Ultra" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-3">
+                        <div class="flex items-center mb-1">
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded">New</span>
+                        </div>
+                        <h3 class="text-sm font-medium mb-1">Galaxy S24 Ultra</h3>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-semibold text-primary">UGX1,199</span>
+                            <button
+                                class="w-7 h-7 flex items-center justify-center bg-primary text-white rounded-full cursor-pointer">
+                                <i class="ri-add-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded shadow-sm overflow-hidden">
+                    <div class="h-36 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/9ecc5a4652655a0760ebeedfc522c944.jpg"
+                            alt="Google Pixel 8 Pro" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-3">
+                        <div class="flex items-center mb-1">
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded">New</span>
+                        </div>
+                        <h3 class="text-sm font-medium mb-1">Google Pixel 8 Pro</h3>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-semibold text-primary">UGX899</span>
+                            <button
+                                class="w-7 h-7 flex items-center justify-center bg-primary text-white rounded-full cursor-pointer">
+                                <i class="ri-add-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded shadow-sm overflow-hidden">
+                    <div class="h-36 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/558dcf5a33bfc2ea08d3970dfb4678d1.jpg"
+                            alt="AirPods Pro" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-3">
+                        <div class="flex items-center mb-1">
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded">New</span>
+                        </div>
+                        <h3 class="text-sm font-medium mb-1">AirPods Pro 2</h3>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-semibold text-primary">UGX249</span>
+                            <button
+                                class="w-7 h-7 flex items-center justify-center bg-primary text-white rounded-full cursor-pointer">
+                                <i class="ri-add-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Best Sellers -->
+        <div class="px-4 mb-8">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-semibold">Best Sellers</h2>
+                <a href="#" class="text-primary text-sm">View all</a>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-white rounded shadow-sm p-3 flex">
+                    <div class="w-20 h-20 rounded overflow-hidden flex-shrink-0">
+                        <img src="https://public.readdy.ai/ai/img_res/46a762283f906263677fb6a24b00cdc8.jpg"
+                            alt="iPhone 14" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="ml-3 flex-1">
+                        <h3 class="text-sm font-medium mb-1">iPhone 14</h3>
+                        <div class="flex items-center mb-1">
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                            </div>
+                            <span class="text-xs text-gray-500 ml-1">(482)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-semibold text-primary">UGX799</span>
+                            <button
+                                class="w-7 h-7 flex items-center justify-center bg-primary text-white rounded-full cursor-pointer">
+                                <i class="ri-add-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded shadow-sm p-3 flex">
+                    <div class="w-20 h-20 rounded overflow-hidden flex-shrink-0">
+                        <img src="https://public.readdy.ai/ai/img_res/2246415e828eb101bde725d0f9472ae6.jpg"
+                            alt="Galaxy S23" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="ml-3 flex-1">
+                        <h3 class="text-sm font-medium mb-1">Galaxy S23</h3>
+                        <div class="flex items-center mb-1">
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-line"></i>
+                            </div>
+                            <span class="text-xs text-gray-500 ml-1">(356)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-semibold text-primary">UGX749</span>
+                            <button
+                                class="w-7 h-7 flex items-center justify-center bg-primary text-white rounded-full cursor-pointer">
+                                <i class="ri-add-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded shadow-sm p-3 flex">
+                    <div class="w-20 h-20 rounded overflow-hidden flex-shrink-0">
+                        <img src="https://public.readdy.ai/ai/img_res/1d982a2b97560efd0ff013944e72be51.jpg"
+                            alt="Apple Watch Series 9" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="ml-3 flex-1">
+                        <h3 class="text-sm font-medium mb-1">Apple Watch Series 9</h3>
+                        <div class="flex items-center mb-1">
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                            <span class="text-xs text-gray-500 ml-1">(629)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-semibold text-primary">UGX399</span>
+                            <button
+                                class="w-7 h-7 flex items-center justify-center bg-primary text-white rounded-full cursor-pointer">
+                                <i class="ri-add-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Special Offers -->
+        <div class="px-4 mb-8">
+            <h2 class="text-lg font-semibold mb-4">Special Offers</h2>
+            <div class="bg-gradient-to-r from-primary/10 to-secondary/10 rounded p-4">
+                <div class="flex items-center justify-between mb-3">
+                    <div>
+                        <span class="text-xs bg-red-100 text-red-800 px-2 py-0.5 rounded">Limited Time</span>
+                        <h3 class="text-base font-medium mt-1">Trade-in Offer</h3>
+                    </div>
+                    <div class="bg-white rounded-full w-12 h-12 flex items-center justify-center">
+                        <span class="text-primary font-bold">30%</span>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-700 mb-3">Trade in your old device and get up to 30% off on your new
+                    purchase.</p>
+                <button
+                    class="bg-primary text-white px-4 py-2 rounded-button font-medium text-sm w-full cursor-pointer">Learn
+                    More</button>
+            </div>
+        </div>
+        <!-- Recently Viewed -->
+        <div class="px-4">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-semibold">Recently Viewed</h2>
+                <a href="#" class="text-primary text-sm">Clear All</a>
+            </div>
+            <div class="flex space-x-4 overflow-x-auto hide-scroll-bar pb-2">
+                <div class="flex-shrink-0 w-28 bg-white rounded shadow-sm overflow-hidden">
+                    <div class="h-28 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/15c88e6b82f9ed88d4da71330b98f12e.jpg"
+                            alt="iPad Air" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-2">
+                        <h3 class="text-xs font-medium truncate">iPad Air</h3>
+                        <span class="text-xs font-semibold text-primary">UGX599</span>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 w-28 bg-white rounded shadow-sm overflow-hidden">
+                    <div class="h-28 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/4a915c2d80aaefb0160fb3d6441f7952.jpg"
+                            alt="Galaxy Buds" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-2">
+                        <h3 class="text-xs font-medium truncate">Galaxy Buds</h3>
+                        <span class="text-xs font-semibold text-primary">UGX149</span>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 w-28 bg-white rounded shadow-sm overflow-hidden">
+                    <div class="h-28 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/2c7a66be7682b98b33821c1e5c456403.jpg"
+                            alt="Pixel Tablet" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-2">
+                        <h3 class="text-xs font-medium truncate">Pixel Tablet</h3>
+                        <span class="text-xs font-semibold text-primary">UGX499</span>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 w-28 bg-white rounded shadow-sm overflow-hidden">
+                    <div class="h-28 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/8557c83b52c1e5eb4c347292d7281318.jpg"
+                            alt="MacBook Air" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-2">
+                        <h3 class="text-xs font-medium truncate">MacBook Air</h3>
+                        <span class="text-xs font-semibold text-primary">UGX999</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Tab Bar -->
+    <div class="fixed bottom-0 w-full bg-white shadow-lg border-t border-gray-200">
+        <div class="grid grid-cols-5 h-16">
+            <a href="index.html" class="flex flex-col items-center justify-center text-primary">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-home-5-fill ri-lg"></i>
+                </div>
+                <span class="text-xs mt-1">Home</span>
+            </a>
+            <a href="Categories.html"
+                data-readdy="true" class="flex flex-col items-center justify-center text-gray-500">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-apps-line ri-lg"></i>
+                </div>
+                <span class="text-xs mt-1">Categories</span>
+            </a>
+            <a href="Wishlist.html" class="flex flex-col items-center justify-center text-gray-500">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-heart-line ri-lg"></i>
+                </div>
+                <span class="text-xs mt-1">Wishlist</span>
+            </a>
+            <a href="Cart.html" class="flex flex-col items-center justify-center text-gray-500">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-shopping-cart-line ri-lg"></i>
+                </div>
+                <span class="text-xs mt-1">Cart</span>
+            </a>
+            <a href="Account.html" class="flex flex-col items-center justify-center text-gray-500">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-user-line ri-lg"></i>
+                </div>
+                <span class="text-xs mt-1">Account</span>
+            </a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle functionality
+            const menuButton = document.querySelector('#menuButton');
+            if (menuButton) {
+                menuButton.addEventListener('click', function () {
+                    // Create and show the slide-out menu
+                    createSlideOutMenu();
+                });
+            }
+            // Function to create and show the slide-out menu
+            function createSlideOutMenu() {
+                // Create backdrop
+                const backdrop = document.createElement('div');
+                backdrop.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300 opacity-0';
+                document.body.appendChild(backdrop);
+                // Create menu container
+                const menuContainer = document.createElement('div');
+                menuContainer.className = 'fixed top-0 right-0 w-4/5 max-w-xs h-full bg-white shadow-xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto';
+                menuContainer.innerHTML = `
+<div class="p-4 border-b border-gray-200">
+<div class="flex items-center justify-between">
+<div class="flex items-end">
+ <a href="index.html" class="logo ml-1"><img src="img/logo.png"  alt="logo"></a>   
+<span style="margin-left:-10px;" class="text-sm font-medium"><b>enta </b>Collectionz</span>
+</div>
+<button class="w-8 h-8 flex items-center justify-center text-gray-600 close-menu">
+<i class="ri-close-line ri-lg"></i>
+</button>
+</div>
+</div>
+<div class="py-2">
+<a href="#" class="flex items-center px-4 py-3 hover:bg-gray-50">
+<div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+<i class="ri-user-settings-line"></i>
+</div>
+<span class="text-gray-800">Account Settings</span>
+</a>
+<a href="#" class="flex items-center px-4 py-3 hover:bg-gray-50">
+<div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+<i class="ri-history-line"></i>
+</div>
+<span class="text-gray-800">Order History</span>
+</a>
+<a href="#" class="flex items-center px-4 py-3 hover:bg-gray-50">
+<div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+<i class="ri-notification-3-line"></i>
+</div>
+<span class="text-gray-800">Notifications</span>
+<span class="ml-auto bg-primary text-white text-xs px-2 py-1 rounded-full">3</span>
+</a>
+<a href="#" class="flex items-center px-4 py-3 hover:bg-gray-50">
+<div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+<i class="ri-customer-service-2-line"></i>
+</div>
+<span class="text-gray-800">Help & Support</span>
+</a>
+<div class="border-t border-gray-200 my-2"></div>
+<a href="#" class="flex items-center px-4 py-3 hover:bg-gray-50">
+<div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+<i class="ri-information-line"></i>
+</div>
+<span class="text-gray-800">About Us</span>
+</a>
+<a href="#" class="flex items-center px-4 py-3 hover:bg-gray-50">
+<div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+<i class="ri-contacts-line"></i>
+</div>
+<span class="text-gray-800">Contact</span>
+</a>
+<div class="border-t border-gray-200 my-2"></div>
+<a href="#" class="flex items-center px-4 py-3 hover:bg-gray-50 text-red-500">
+<div class="w-6 h-6 flex items-center justify-center text-red-500 mr-3">
+<i class="ri-logout-box-line"></i>
+</div>
+<span>Sign Out</span>
+</a>
+</div>
+`;
+                document.body.appendChild(menuContainer);
+                // Show the menu with animation
+                setTimeout(() => {
+                    backdrop.classList.remove('opacity-0');
+                    menuContainer.classList.remove('translate-x-full');
+                }, 10);
+                // Close menu when clicking on backdrop
+                backdrop.addEventListener('click', closeMenu);
+                // Close menu when clicking on close button
+                const closeButton = menuContainer.querySelector('.close-menu');
+                closeButton.addEventListener('click', closeMenu);
+                function closeMenu() {
+                    backdrop.classList.add('opacity-0');
+                    menuContainer.classList.add('translate-x-full');
+                    // Remove elements after animation completes
+                    setTimeout(() => {
+                        backdrop.remove();
+                        menuContainer.remove();
+                    }, 300);
+                }
+            }
+            // Add to cart functionality
+            const addToCartButtons = document.querySelectorAll('.ri-add-line');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const productElement = this.closest('[class*="bg-white"]');
+                    const productName = productElement.querySelector('h3').textContent;
+                    // Create and show notification
+                    const notification = document.createElement('div');
+                    notification.className = 'fixed top-16 left-0 right-0 mx-auto w-4/5 bg-green-100 text-green-800 px-4 py-3 rounded shadow-md flex items-center justify-between z-50';
+                    notification.innerHTML = `
+<div class="flex items-center">
+<i class="ri-check-line ri-lg mr-2"></i>
+<span>${productName} added to cart</span>
+</div>
+<button class="text-green-800">
+<i class="ri-close-line"></i>
+</button>
+`;
+                    document.body.appendChild(notification);
+                    // Auto remove after 3 seconds
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 3000);
+                    // Close button functionality
+                    const closeButton = notification.querySelector('.ri-close-line');
+                    closeButton.addEventListener('click', () => {
+                        notification.remove();
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

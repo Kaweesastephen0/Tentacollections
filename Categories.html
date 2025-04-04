@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenta Collectionz - Categories</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#4F46E5', secondary: '#F59E0B' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAFAFA;
+        }
+
+        .hide-scroll-bar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scroll-bar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .subcategory-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .subcategory-content.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800">
+    <!-- Nav Bar -->
+    <nav class="fixed top-0 w-full bg-white shadow-sm z-50">
+        <div class="px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="https://readdy.ai/home/fab6c5c4-59a0-43c0-8dc3-71899bd6f2d3/eca9eb24-a068-4ac7-aeb0-407bba69840d"
+                    data-readdy="true" class="font-['Pacifico'] text-xl text-primary">Tenta</a>
+                <span class="ml-1 text-sm font-medium">Collectionz</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <button class="w-8 h-8 flex items-center justify-center text-gray-600">
+                    <i class="ri-search-line ri-lg"></i>
+                </button>
+                <button class="w-8 h-8 flex items-center justify-center text-gray-600 relative">
+                    <i class="ri-shopping-cart-line ri-lg"></i>
+                    <span
+                        class="absolute -top-1 -right-1 bg-primary text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">3</span>
+                </button>
+                <button class="w-8 h-8 flex items-center justify-center text-gray-600" id="menuButton">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <div class="pt-16 pb-16">
+        <!-- Search Bar -->
+        <div class="px-4 mb-6">
+            <div class="relative">
+                <input type="text" placeholder="Search categories..."
+                    class="w-full py-3 pl-10 pr-4 bg-gray-50 rounded border-none focus:ring-2 focus:ring-primary/30 text-sm">
+                <div
+                    class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500">
+                    <i class="ri-search-line"></i>
+                </div>
+            </div>
+        </div>
+        <!-- Recently Searched -->
+        <div class="px-4 mb-6">
+            <div class="flex justify-between items-center mb-3">
+                <h3 class="text-sm font-medium text-gray-700">Recently Searched</h3>
+                <button class="text-xs text-primary">Clear All</button>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 bg-gray-100 rounded-full text-xs text-gray-700 cursor-pointer">iPhone 15</span>
+                <span class="px-3 py-1.5 bg-gray-100 rounded-full text-xs text-gray-700 cursor-pointer">Wireless
+                    Earbuds</span>
+                <span class="px-3 py-1.5 bg-gray-100 rounded-full text-xs text-gray-700 cursor-pointer">Samsung
+                    Galaxy</span>
+                <span class="px-3 py-1.5 bg-gray-100 rounded-full text-xs text-gray-700 cursor-pointer">Smart
+                    Watch</span>
+            </div>
+        </div>
+        <!-- Main Categories -->
+        <div class="px-4 mb-8">
+            <h2 class="text-lg font-semibold mb-4">Main Categories</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Smartphones Category -->
+                <div class="bg-white rounded shadow-sm overflow-hidden">
+                    <div class="category-header cursor-pointer" data-category="smartphones">
+                        <div class="h-32 overflow-hidden bg-blue-50">
+                            <img src="https://public.readdy.ai/ai/img_res/35e15730242def77a528e22c83176b0d.jpg"
+                                alt="Smartphones" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-3 flex justify-between items-center">
+                            <div>
+                                <h3 class="text-base font-medium">Smartphones</h3>
+                                <p class="text-xs text-gray-500">6 subcategories</p>
+                            </div>
+                            <div class="w-8 h-8 flex items-center justify-center text-primary toggle-icon">
+                                <i class="ri-arrow-down-s-line ri-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subcategory-content px-3 pb-3 bg-gray-50" id="smartphones">
+                        <div class="grid grid-cols-2 gap-3">
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/f7d8a8e3b9c6a5d4e3f2b1a9c8d7e6f5.jpg"
+                                        alt="iPhone" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">iPhone</span>
+                                    <p class="text-[10px] text-gray-500">24 products</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/a7b6c5d4e3f2g1h9i8j7k6l5m4n3o2p1.jpg"
+                                        alt="Android" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Android</span>
+                                    <p class="text-[10px] text-gray-500">36 products</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/q1w2e3r4t5y6u7i8o9p0a9s8d7f6g5h4.jpg"
+                                        alt="Samsung" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Samsung</span>
+                                    <p class="text-[10px] text-gray-500">18 products</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/j4k5l6z7x8c9v0b9n8m7q6w5e4r3t2y1.jpg"
+                                        alt="Google" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Google</span>
+                                    <p class="text-[10px] text-gray-500">9 products</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/u7i8o9p0l6k5j4h3g2f1d9s8a7q6w5e4.jpg"
+                                        alt="Xiaomi" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Xiaomi</span>
+                                    <p class="text-[10px] text-gray-500">12 products</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-blue-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/r3t4y5u6i7o8p9a0s9d8f7g6h5j4k3l2.jpg"
+                                        alt="OnePlus" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">OnePlus</span>
+                                    <p class="text-[10px] text-gray-500">7 products</p>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="#" class="flex items-center justify-center mt-3 text-xs text-primary">
+                            <span>View all smartphones</span>
+                            <i class="ri-arrow-right-s-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Tablets Category -->
+                <div class="bg-white rounded shadow-sm overflow-hidden">
+                    <div class="category-header cursor-pointer" data-category="tablets">
+                        <div class="h-32 overflow-hidden bg-green-50">
+                            <img src="https://public.readdy.ai/ai/img_res/b2c9c98ff2e9bc55f00fdb7cced887b2.jpg"
+                                alt="Tablets" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-3 flex justify-between items-center">
+                            <div>
+                                <h3 class="text-base font-medium">Tablets</h3>
+                                <p class="text-xs text-gray-500">4 subcategories</p>
+                            </div>
+                            <div class="w-8 h-8 flex items-center justify-center text-primary toggle-icon">
+                                <i class="ri-arrow-down-s-line ri-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subcategory-content px-3 pb-3 bg-gray-50" id="tablets">
+                        <div class="grid grid-cols-2 gap-3">
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-green-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/z1x2c3v4b5n6m7q8w9e0r9t8y7u6i5o4p3.jpg"
+                                        alt="iPad" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">iPad</span>
+                                    <p class="text-[10px] text-gray-500">15 products</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-green-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/a1s2d3f4g5h6j7k8l9z0x9c8v7b6n5m4.jpg"
+                                        alt="Galaxy Tab" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Galaxy Tab</span>
+                                    <p class="text-[10px] text-gray-500">11 products</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-green-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/q1w2e3r4t5y6u7i8o9p0a9s8d7f6g5h4.jpg"
+                                        alt="Fire Tablets" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Fire Tablets</span>
+                                    <p class="text-[10px] text-gray-500">8 products</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-green-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/z1x2c3v4b5n6m7q8w9e0r9t8y7u6i5o4p3.jpg"
+                                        alt="Lenovo" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Lenovo</span>
+                                    <p class="text-[10px] text-gray-500">6 products</p>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="#" class="flex items-center justify-center mt-3 text-xs text-primary">
+                            <span>View all tablets</span>
+                            <i class="ri-arrow-right-s-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Accessories Category -->
+                <div class="bg-white rounded shadow-sm overflow-hidden">
+                    <div class="category-header cursor-pointer" data-category="accessories">
+                        <div class="h-32 overflow-hidden bg-yellow-50">
+                            <img src="https://public.readdy.ai/ai/img_res/0161caec17e6b39c122c44468393fb6e.jpg"
+                                alt="Accessories" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-3 flex justify-between items-center">
+                            <div>
+                                <h3 class="text-base font-medium">Accessories</h3>
+                                <p class="text-xs text-gray-500">8 subcategories</p>
+                            </div>
+                            <div class="w-8 h-8 flex items-center justify-center text-primary toggle-icon">
+                                <i class="ri-arrow-down-s-line ri-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subcategory-content px-3 pb-3 bg-gray-50" id="accessories">
+                        <div class="grid grid-cols-2 gap-3">
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-yellow-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/q1w2e3r4t5y6u7i8o9p0a9s8d7f6g5h4.jpg"
+                                        alt="Cases" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Cases</span>
+                                    <p class="text-[10px] text-gray-500">42 products</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-yellow-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/z1x2c3v4b5n6m7q8w9e0r9t8y7u6i5o4p3.jpg"
+                                        alt="Screen Protectors" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Protectors</span>
+                                    <p class="text-[10px] text-gray-500">28 products</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-yellow-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/a1s2d3f4g5h6j7k8l9z0x9c8v7b6n5m4.jpg"
+                                        alt="Cables" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Cables</span>
+                                    <p class="text-[10px] text-gray-500">35 products</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-yellow-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/q1w2e3r4t5y6u7i8o9p0a9s8d7f6g5h4.jpg"
+                                        alt="Power Banks" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Power Banks</span>
+                                    <p class="text-[10px] text-gray-500">19 products</p>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="#" class="flex items-center justify-center mt-3 text-xs text-primary">
+                            <span>View all accessories</span>
+                            <i class="ri-arrow-right-s-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Wearables Category -->
+                <div class="bg-white rounded shadow-sm overflow-hidden">
+                    <div class="category-header cursor-pointer" data-category="wearables">
+                        <div class="h-32 overflow-hidden bg-purple-50">
+                            <img src="https://public.readdy.ai/ai/img_res/0bb529f429420116fe0e7c28577cfbd5.jpg"
+                                alt="Wearables" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-3 flex justify-between items-center">
+                            <div>
+                                <h3 class="text-base font-medium">Wearables</h3>
+                                <p class="text-xs text-gray-500">5 subcategories</p>
+                            </div>
+                            <div class="w-8 h-8 flex items-center justify-center text-primary toggle-icon">
+                                <i class="ri-arrow-down-s-line ri-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subcategory-content px-3 pb-3 bg-gray-50" id="wearables">
+                        <div class="grid grid-cols-2 gap-3">
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-purple-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/q1w2e3r4t5y6u7i8o9p0a9s8d7f6g5h4.jpg"
+                                        alt="Apple Watch" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Apple Watch</span>
+                                    <p class="text-[10px] text-gray-500">14 products</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-purple-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/z1x2c3v4b5n6m7q8w9e0r9t8y7u6i5o4p3.jpg"
+                                        alt="Galaxy Watch" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Galaxy Watch</span>
+                                    <p class="text-[10px] text-gray-500">9 products</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-purple-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/a1s2d3f4g5h6j7k8l9z0x9c8v7b6n5m4.jpg"
+                                        alt="Fitbit" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Fitbit</span>
+                                    <p class="text-[10px] text-gray-500">12 products</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-purple-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/q1w2e3r4t5y6u7i8o9p0a9s8d7f6g5h4.jpg"
+                                        alt="Garmin" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Garmin</span>
+                                    <p class="text-[10px] text-gray-500">8 products</p>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="#" class="flex items-center justify-center mt-3 text-xs text-primary">
+                            <span>View all wearables</span>
+                            <i class="ri-arrow-right-s-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Audio Category -->
+                <div class="bg-white rounded shadow-sm overflow-hidden">
+                    <div class="category-header cursor-pointer" data-category="audio">
+                        <div class="h-32 overflow-hidden bg-red-50">
+                            <img src="https://public.readdy.ai/ai/img_res/c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9.jpg"
+                                alt="Audio" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-3 flex justify-between items-center">
+                            <div>
+                                <h3 class="text-base font-medium">Audio</h3>
+                                <p class="text-xs text-gray-500">6 subcategories</p>
+                            </div>
+                            <div class="w-8 h-8 flex items-center justify-center text-primary toggle-icon">
+                                <i class="ri-arrow-down-s-line ri-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subcategory-content px-3 pb-3 bg-gray-50" id="audio">
+                        <div class="grid grid-cols-2 gap-3">
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-red-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/q1w2e3r4t5y6u7i8o9p0a9s8d7f6g5h4.jpg"
+                                        alt="Earbuds" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Earbuds</span>
+                                    <p class="text-[10px] text-gray-500">23 products</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-red-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/z1x2c3v4b5n6m7q8w9e0r9t8y7u6i5o4p3.jpg"
+                                        alt="Headphones" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Headphones</span>
+                                    <p class="text-[10px] text-gray-500">18 products</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-red-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/a1s2d3f4g5h6j7k8l9z0x9c8v7b6n5m4.jpg"
+                                        alt="Speakers" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Speakers</span>
+                                    <p class="text-[10px] text-gray-500">15 products</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-red-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/q1w2e3r4t5y6u7i8o9p0a9s8d7f6g5h4.jpg"
+                                        alt="Soundbars" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Soundbars</span>
+                                    <p class="text-[10px] text-gray-500">7 products</p>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="#" class="flex items-center justify-center mt-3 text-xs text-primary">
+                            <span>View all audio devices</span>
+                            <i class="ri-arrow-right-s-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Gadgets Category -->
+                <div class="bg-white rounded shadow-sm overflow-hidden">
+                    <div class="category-header cursor-pointer" data-category="gadgets">
+                        <div class="h-32 overflow-hidden bg-indigo-50">
+                            <img src="https://public.readdy.ai/ai/img_res/s1d2f3g4h5j6k7l8z9x0c9v8b7n6m5.jpg"
+                                alt="Gadgets" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-3 flex justify-between items-center">
+                            <div>
+                                <h3 class="text-base font-medium">Gadgets</h3>
+                                <p class="text-xs text-gray-500">7 subcategories</p>
+                            </div>
+                            <div class="w-8 h-8 flex items-center justify-center text-primary toggle-icon">
+                                <i class="ri-arrow-down-s-line ri-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subcategory-content px-3 pb-3 bg-gray-50" id="gadgets">
+                        <div class="grid grid-cols-2 gap-3">
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-indigo-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/q1w2e3r4t5y6u7i8o9p0a9s8d7f6g5h4.jpg"
+                                        alt="Drones" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Drones</span>
+                                    <p class="text-[10px] text-gray-500">11 products</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-indigo-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/z1x2c3v4b5n6m7q8w9e0r9t8y7u6i5o4p3.jpg"
+                                        alt="Cameras" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Cameras</span>
+                                    <p class="text-[10px] text-gray-500">16 products</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-indigo-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/a1s2d3f4g5h6j7k8l9z0x9c8v7b6n5m4.jpg"
+                                        alt="Smart Home" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">Smart Home</span>
+                                    <p class="text-[10px] text-gray-500">22 products</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center p-2 bg-white rounded">
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center bg-indigo-100 rounded-full mr-2 overflow-hidden">
+                                    <img src="https://public.readdy.ai/ai/img_res/q1w2e3r4t5y6u7i8o9p0a9s8d7f6g5h4.jpg"
+                                        alt="VR Headsets" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <span class="text-xs font-medium">VR Headsets</span>
+                                    <p class="text-[10px] text-gray-500">8 products</p>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="#" class="flex items-center justify-center mt-3 text-xs text-primary">
+                            <span>View all gadgets</span>
+                            <i class="ri-arrow-right-s-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Featured Collections -->
+        <div class="px-4 mb-8">
+            <h2 class="text-lg font-semibold mb-4">Featured Collections</h2>
+            <div class="space-y-4">
+                <div class="bg-white rounded shadow-sm overflow-hidden">
+                    <div class="h-24 bg-gradient-to-r from-primary/20 to-primary/5 flex items-center px-4">
+                        <div>
+                            <span class="text-xs bg-primary text-white px-2 py-0.5 rounded">HOT</span>
+                            <h3 class="text-base font-medium mt-1">New Arrivals</h3>
+                            <p class="text-xs text-gray-600">Latest tech products of 2025</p>
+                        </div>
+                        <div class="ml-auto">
+                            <button class="bg-primary text-white px-3 py-1.5 rounded-button text-xs cursor-pointer">View
+                                All</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded shadow-sm overflow-hidden">
+                    <div class="h-24 bg-gradient-to-r from-secondary/20 to-secondary/5 flex items-center px-4">
+                        <div>
+                            <span class="text-xs bg-secondary text-white px-2 py-0.5 rounded">TRENDING</span>
+                            <h3 class="text-base font-medium mt-1">Best Sellers</h3>
+                            <p class="text-xs text-gray-600">Our most popular products</p>
+                        </div>
+                        <div class="ml-auto">
+                            <button
+                                class="bg-secondary text-white px-3 py-1.5 rounded-button text-xs cursor-pointer">View
+                                All</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded shadow-sm overflow-hidden">
+                    <div class="h-24 bg-gradient-to-r from-red-500/20 to-red-500/5 flex items-center px-4">
+                        <div>
+                            <span class="text-xs bg-red-500 text-white px-2 py-0.5 rounded">SALE</span>
+                            <h3 class="text-base font-medium mt-1">Special Offers</h3>
+                            <p class="text-xs text-gray-600">Limited time discounts</p>
+                        </div>
+                        <div class="ml-auto">
+                            <button class="bg-red-500 text-white px-3 py-1.5 rounded-button text-xs cursor-pointer">View
+                                All</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Recently Viewed Categories -->
+        <div class="px-4 mb-8">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-semibold">Recently Viewed</h2>
+                <button class="text-primary text-sm">Clear</button>
+            </div>
+            <div class="flex space-x-4 overflow-x-auto hide-scroll-bar pb-2">
+                <div class="flex-shrink-0 w-24 bg-white rounded shadow-sm overflow-hidden">
+                    <div class="h-24 overflow-hidden bg-blue-50">
+                        <img src="https://public.readdy.ai/ai/img_res/q1w2e3r4t5y6u7i8o9p0a9s8d7f6g5h4.jpg"
+                            alt="Smartphones" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-2">
+                        <h3 class="text-xs font-medium truncate">Smartphones</h3>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 w-24 bg-white rounded shadow-sm overflow-hidden">
+                    <div class="h-24 overflow-hidden bg-yellow-50">
+                        <img src="https://public.readdy.ai/ai/img_res/z1x2c3v4b5n6m7q8w9e0r9t8y7u6i5o4p3.jpg"
+                            alt="Cases" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-2">
+                        <h3 class="text-xs font-medium truncate">Cases</h3>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 w-24 bg-white rounded shadow-sm overflow-hidden">
+                    <div class="h-24 overflow-hidden bg-purple-50">
+                        <img src="https://public.readdy.ai/ai/img_res/a1s2d3f4g5h6j7k8l9z0x9c8v7b6n5m4.jpg"
+                            alt="Wearables" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-2">
+                        <h3 class="text-xs font-medium truncate">Wearables</h3>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 w-24 bg-white rounded shadow-sm overflow-hidden">
+                    <div class="h-24 overflow-hidden bg-red-50">
+                        <img src="https://public.readdy.ai/ai/img_res/q1w2e3r4t5y6u7i8o9p0a9s8d7f6g5h4.jpg"
+                            alt="Earbuds" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-2">
+                        <h3 class="text-xs font-medium truncate">Earbuds</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Tab Bar -->
+    <div class="fixed bottom-0 w-full bg-white shadow-lg border-t border-gray-200">
+        <div class="grid grid-cols-5 h-16">
+            <a href="index.html"
+                data-readdy="true" class="flex flex-col items-center justify-center text-gray-500">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-home-5-line ri-lg"></i>
+                </div>
+                <span class="text-xs mt-1">Home</span>
+            </a>
+            <a href="Categories.html" class="flex flex-col items-center justify-center text-primary">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-apps-fill ri-lg"></i>
+                </div>
+                <span class="text-xs mt-1">Categories</span>
+            </a>
+            <a href="Wishlist.html"
+                data-readdy="true" class="flex flex-col items-center justify-center text-gray-500">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-heart-line ri-lg"></i>
+                </div>
+                <span class="text-xs mt-1">Wishlist</span>
+            </a>
+            <a href="Cart.html" class="flex flex-col items-center justify-center text-gray-500">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-shopping-cart-line ri-lg"></i>
+                </div>
+                <span class="text-xs mt-1">Cart</span>
+            </a>
+            <a href="Account.html" class="flex flex-col items-center justify-center text-gray-500">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-user-line ri-lg"></i>
+                </div>
+                <span class="text-xs mt-1">Account</span>
+            </a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle functionality
+            const menuButton = document.querySelector('#menuButton');
+            if (menuButton) {
+                menuButton.addEventListener('click', function () {
+                    // Create and show the slide-out menu
+                    createSlideOutMenu();
+                });
+            }
+            // Function to create and show the slide-out menu
+            function createSlideOutMenu() {
+                // Create backdrop
+                const backdrop = document.createElement('div');
+                backdrop.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300 opacity-0';
+                document.body.appendChild(backdrop);
+                // Create menu container
+                const menuContainer = document.createElement('div');
+                menuContainer.className = 'fixed top-0 right-0 w-4/5 max-w-xs h-full bg-white shadow-xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto';
+                menuContainer.innerHTML = `
+<div class="p-4 border-b border-gray-200">
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+<span class="font-['Pacifico'] text-xl text-primary">Tenta</span>
+<span class="ml-1 text-sm font-medium">Collectionz</span>
+</div>
+<button class="w-8 h-8 flex items-center justify-center text-gray-600 close-menu">
+<i class="ri-close-line ri-lg"></i>
+</button>
+</div>
+</div>
+<div class="py-2">
+<a href="#" class="flex items-center px-4 py-3 hover:bg-gray-50">
+<div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+<i class="ri-user-settings-line"></i>
+</div>
+<span class="text-gray-800">Account Settings</span>
+</a>
+<a href="#" class="flex items-center px-4 py-3 hover:bg-gray-50">
+<div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+<i class="ri-history-line"></i>
+</div>
+<span class="text-gray-800">Order History</span>
+</a>
+<a href="#" class="flex items-center px-4 py-3 hover:bg-gray-50">
+<div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+<i class="ri-notification-3-line"></i>
+</div>
+<span class="text-gray-800">Notifications</span>
+<span class="ml-auto bg-primary text-white text-xs px-2 py-1 rounded-full">3</span>
+</a>
+<a href="#" class="flex items-center px-4 py-3 hover:bg-gray-50">
+<div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+<i class="ri-customer-service-2-line"></i>
+</div>
+<span class="text-gray-800">Help & Support</span>
+</a>
+<div class="border-t border-gray-200 my-2"></div>
+<a href="#" class="flex items-center px-4 py-3 hover:bg-gray-50">
+<div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+<i class="ri-information-line"></i>
+</div>
+<span class="text-gray-800">About Us</span>
+</a>
+<a href="#" class="flex items-center px-4 py-3 hover:bg-gray-50">
+<div class="w-6 h-6 flex items-center justify-center text-primary mr-3">
+<i class="ri-contacts-line"></i>
+</div>
+<span class="text-gray-800">Contact</span>
+</a>
+<div class="border-t border-gray-200 my-2"></div>
+<a href="#" class="flex items-center px-4 py-3 hover:bg-gray-50 text-red-500">
+<div class="w-6 h-6 flex items-center justify-center text-red-500 mr-3">
+<i class="ri-logout-box-line"></i>
+</div>
+<span>Sign Out</span>
+</a>
+</div>
+`;
+                document.body.appendChild(menuContainer);
+                // Show the menu with animation
+                setTimeout(() => {
+                    backdrop.classList.remove('opacity-0');
+                    menuContainer.classList.remove('translate-x-full');
+                }, 10);
+                // Close menu when clicking on backdrop
+                backdrop.addEventListener('click', closeMenu);
+                // Close menu when clicking on close button
+                const closeButton = menuContainer.querySelector('.close-menu');
+                closeButton.addEventListener('click', closeMenu);
+                function closeMenu() {
+                    backdrop.classList.add('opacity-0');
+                    menuContainer.classList.add('translate-x-full');
+                    // Remove elements after animation completes
+                    setTimeout(() => {
+                        backdrop.remove();
+                        menuContainer.remove();
+                    }, 300);
+                }
+            }
+            // Category expansion functionality
+            const categoryHeaders = document.querySelectorAll('.category-header');
+            categoryHeaders.forEach(header => {
+                header.addEventListener('click', function () {
+                    const categoryId = this.getAttribute('data-category');
+                    const content = document.getElementById(categoryId);
+                    const icon = this.querySelector('.toggle-icon i');
+                    if (content.classList.contains('active')) {
+                        content.classList.remove('active');
+                        icon.classList.remove('ri-arrow-up-s-line');
+                        icon.classList.add('ri-arrow-down-s-line');
+                    } else {
+                        content.classList.add('active');
+                        icon.classList.remove('ri-arrow-down-s-line');
+                        icon.classList.add('ri-arrow-up-s-line');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
